@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -27,9 +27,15 @@
     "app-config": "^1.0.1",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "helmet": "^7.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.2.0"
+  },
+  "devDependencies": {
+    "chai": "^4.4.1",
+    "chai-http": "^4.4.0",
+    "mocha": "^10.3.0"
   }
 }
