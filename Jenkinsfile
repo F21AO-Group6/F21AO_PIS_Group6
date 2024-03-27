@@ -3,28 +3,28 @@ pipeline {
 
     environment {
         // Define environment variables if needed
-        NODE_VERSION = '12'
+        NODE_VERSION = '20'
     }
 
     stages {
         stage('Install') {
             steps {
                 echo 'Installing dependencies...'
-                sh 'npm install'
+                bat 'npm install' // Use bat for Windows batch commands
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh 'npm test'
+                bat 'npm test'
             }
         }
 
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                sh 'npm run build'
+                bat 'npm run build'
             }
         }
 
