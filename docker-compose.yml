@@ -1,17 +1,22 @@
-version: '3'
+version: "3"
 services:
+  mongo_db:
+    container_name: database_container
+    image: mongo:latest
+    restart: always
+    volumes:
+      - mongo_db:/data/db
+ 
   app:
+    # replace imageName with your image name (block in your case)
     build: .
     ports:
-      - "5000:5000"
+      - 4000:5000 # Replace the port of your application here if used
     environment:
-      - NODE_ENV=development
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
+      - DB_URI=mongodb://mongo_db:27017
     depends_on:
-      - mongo
-  mongo:
-    image: mongo
-    ports:
-      - "27017:27017"
+      - mongo_db
+ 
+volumes:
+  mongo_db: {}
+ 
