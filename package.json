@@ -2,10 +2,10 @@
   "name": "pis",
   "version": "0.0.0",
   "description": "Patient Information System",
-  "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "cross-env TEST_PORT=5001 mocha"
+    "test": "cross-env TEST_PORT=5001 mocha",
+    "build": "echo 'No build step required for backend-only applications'"
   },
   "repository": {
     "type": "git",
