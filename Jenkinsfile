@@ -33,7 +33,7 @@ pipeline {
 
     post {
         always {
-            echo 'This will always run'
+            echo 'Testing'
         }
         success {
             echo 'Build succeeded!'
